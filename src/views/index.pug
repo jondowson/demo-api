@@ -1,0 +1,23 @@
+html
+  head
+    title= 'Transaction List'
+    style
+      include style.css
+    body
+      h1= 'Transaction List'
+        table
+          tr
+            td= 'transaction_id'
+            td= 'first name'
+            td= 'last name'
+            td= 'email'
+            td= 'product description'
+            td= '$ price'
+          for trx in trxList
+            tr
+              td= trx.trx_id
+              td= trx.firstname
+              td= trx.lastname
+              td= trx.email
+              td= trx.prod_desc
+              td= trx.price

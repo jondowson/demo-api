@@ -1,0 +1,22 @@
+{
+  "name": "demo-api",
+  "version": "1.0.0",
+  "description": "api to read and write to cassandra",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.19.0",
+    "dse-driver": "~2.1.0",
+    "morgan": "^1.9.1",
+    "assert": "~2.0.0",
+    "pug": "~2.0.4",
+    "path": "~0.12.7",
+    "enum": "~2.4.0",
+    "overload-protection": "~1.1.0",
+    "dotenv": "~8.0.0",
+    "os": "~0.1.1",
+    "request": "~2.88.0"
+  }
+}
