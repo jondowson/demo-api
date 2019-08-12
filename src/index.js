@@ -53,8 +53,9 @@ app.use(protect);
 // ====================================================
 // setup the db connection
 // ====================================================
-const seedList = process.env.SEED_LIST.split(',');
-const client = new dse.Client({ contactPoints: seedList, localDataCenter: process.env.LOCAL_DC });
+const seedList = process.env.DEMO_API_DSE_SEEDS.split(',');
+console.log(seedList);
+const client = new dse.Client({ contactPoints: seedList, localDataCenter: process.env.DEMO_API_DSE_LOCALDC });
 
 // ====================================================
 // api route: post transaction
@@ -152,11 +153,11 @@ app.get('/count/', function(req, res) {
 // ====================================================
 // start the server - warm up each cpu with a call
 // ====================================================
-app.listen(process.env.WEBSERVER_PORT, () => {
-  console.log('roadshow-demo-api is listening on port: ' + process.env.WEBSERVER_PORT);
+app.listen(process.env.DEMO_API_WEBSERVER_PORT, () => {
+  console.log('roadshow-demo-api is listening on port: ' + process.env.DEMO_API_WEBSERVER_PORT);
   console.log('warming up the ' + os.cpus().length + ' cpus');
   for (let i = 0; i < 20; i++) {
-    request(process.env.WEBSERVER_URL + ':' + process.env.WEBSERVER_PORT + '/read/1', function (error, response, body) {
+    request(process.env.DEMO_API_WEBSERVER_URL + ':' + process.env.DEMO_API_WEBSERVER_PORT + '/read/1', function (error, response, body) {
     });
   };
 });
